@@ -15,6 +15,8 @@ supports "ubuntu"
 depends "lb_haproxy"
 depends "lb_clb"
 depends "lb_elb"
+depends "google_cloud"
+depends "rsc_google_cloud"
 depends "apache2"
 depends "app", ">= 1.0"
 
@@ -158,7 +160,7 @@ attribute "lb/service/provider",
     " Load Balancing. Example: lb_client",
   :required => "recommended",
   :default => "lb_client",
-  :choice => ["lb_client", "lb_clb", "lb_elb"],
+  :choice => ["lb_client", "lb_clb", "lb_elb", "google_cloud_lb"],
   :recipes => [
     "lb::default",
     "lb::do_attach_request",
